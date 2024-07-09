@@ -1,12 +1,16 @@
 {
-  "name": "common",
+  "name": "@mohdyasirkn/medium-blog-val",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@mohdyasirkn/medium-blog-val": "^1.0.0",
+    "zod": "^3.23.8"
+  }
 }
