@@ -1,9 +1,15 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
+import { userRouter } from "./routes/user";
+import { blogRouter } from "./routes/blog";
 
-const app = new Hono()
+type Bindings = {
+  DATABASE_URL: string;
+  JWT_SECRET: string;
+};
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const app = new Hono<{ Bindings: Bindings }>().basePath("/api/v1");
 
-export default app
+app.route("/user", userRouter);
+app.route("/blog", blogRouter);
+
+export default app;
